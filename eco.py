@@ -10,12 +10,12 @@ from telebot.types import (
     InlineKeyboardMarkup,
     InlineKeyboardButton
 )
-bot = telebot.TeleBot("8540625820:AAGtdRIt-vWYAmVMJGLuoa1WQI0SIQ9am2c")
+bot = telebot.TeleBot("")
 mems = os.listdir('images1')
 
 @bot.message_handler(commands=['hello'])
 def send_welcome(message):
-    bot.reply_to(message, f'Привет! Я эко-бот! Используй команду /eco чтобы узнать об эко-активистах и о том, чем они занимаются!')
+    bot.reply_to(message, f'Привет! Я эко-бот! Используй команду /eco чтобы узнать об эко-активистах и о том, чем они занимаются! Также можно использовать команду /plasticrecycle чтобы узнать о переработке!')
 
 @bot.message_handler(commands=['eco'])
 def send_eco(message):
@@ -54,6 +54,7 @@ def send_plastic(message):
     bot.reply_to(message, "Это была маленькая статья о переработке, которая помогла лучше понять этот термин и понять, зачем этим заниматься! Спасибо, что прочитали! :)")
 
 bot.infinity_polling()
+
 
 
 
